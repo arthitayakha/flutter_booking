@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'booking_page.dart';
 import 'booking_list.dart';
+import 'login.dart';
 
 //////////////////////////////////////////////////////////////
 // API URL
@@ -114,7 +115,23 @@ return Scaffold(
           );
 
         },
-      )
+      ),
+
+
+       IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LoginPage(),
+                ),
+                (route) => false,
+              );
+
+            },
+          ),
 
     ],
   ),
