@@ -39,10 +39,10 @@ class _LoginPageState extends State<LoginPage> {
       if (data["status"] == "success") {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(
-            builder: (context) => RoomList(),
-          ),
-        );
+           MaterialPageRoute(builder: (context) => RoomList(name: data["name"],))
+          );
+          
+        
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(

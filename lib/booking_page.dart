@@ -3,21 +3,32 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class BookingPage extends StatefulWidget {
-
   final Map room;
+  final String name;
 
-  const BookingPage({super.key, required this.room});
+  const BookingPage({
+    super.key,
+    required this.room,
+    required this.name,
+    });
 
   @override
   State<BookingPage> createState() => _BookingPageState();
 }
 
 class _BookingPageState extends State<BookingPage> {
-
-  final nameController = TextEditingController();
+  late TextEditingController nameController;
   final dateController = TextEditingController();
   final startController = TextEditingController();
   final endController = TextEditingController();
+
+@override
+void initState(){
+  super.initState();
+  nameController = TextEditingController(text: widget.name);
+}
+
+
 
   ////////////////////////////////////////////////////////////
   // DATE PICKER

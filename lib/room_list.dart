@@ -16,8 +16,8 @@ const String baseUrl = "http://localhost/flutter_booking_66708120/php_api/";
 //////////////////////////////////////////////////////////////
 
 class RoomList extends StatefulWidget {
-const RoomList({super.key});
-
+final String name;
+const RoomList({super.key, required this.name});
 @override
 State<RoomList> createState() => _RoomListState();
 }
@@ -264,10 +264,12 @@ trailing: Wrap(
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (_) => BookingPage(room: room),
+            builder: (_) => BookingPage(
+            room: room,
+            name: widget.name,
+            ),
           ),
         );
-
       },
     ),
 
