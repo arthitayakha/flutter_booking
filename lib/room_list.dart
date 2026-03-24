@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'booking_page.dart';
 import 'booking_list.dart';
-import 'login.dart';
+import 'home_page.dart';
 
 //////////////////////////////////////////////////////////////
 // API URL
@@ -125,7 +125,7 @@ return Scaffold(
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const LoginPage(),
+                  builder: (context) => const HomePage(),
                 ),
                 (route) => false,
               );
